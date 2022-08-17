@@ -21,6 +21,13 @@ else
   echo nemu/$d already exists
 fi
 
+d="../am-kernels"
+if [[ ! -d nemu/$d ]]; then
+  cp -r $NEMU_HOME/$d `dirname nemu/$d`
+else
+  echo `dirname nemu/$d` already exists
+fi
+
 source ysyx-exam/setup-env.sh
 
 find $NAVY_HOME -name Makefile | xargs sed -i -e '/git clone/d'

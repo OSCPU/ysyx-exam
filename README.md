@@ -54,21 +54,22 @@ exit # 退出当前shell, 避免继续使用考核环境中的环境变量
 ## 考核流程
 
 1. 学生完成上述流程后，等待助教安排考核时间
-1. 助教在代码仓库中注入3个错误，涵盖软件、硬件和环境（包括构建脚本和仿真环境等）
-但不会在仙剑、libc、spike等学生没有进行直接开发的代码中注入错误
+1. 助教在代码仓库中注入3个错误，涵盖软件、硬件和环境（包括构建脚本和仿真环境等），
+但不会在仙剑、libc、spike等学生没有进行直接开发的代码中注入错误，
+也不会在Chisel代码中注入花哨的Scala语法糖
 1. 助教通过`git init`重新创建工程，从而去掉`git diff`的记录
 1. 助教每周安排线上调试的答辩（每人30分钟）
 1. 每两名助教监考一位学生（负责注入错误的助教必须参加），强调答辩纪律，提醒答辩时间等
 1. 学生答辩开始时，要求共享屏幕（整个桌面）并打开摄像头，助教录屏
 1. 助教将注入错误的工程push到ysyx-exam仓库（即本仓库）的新分支（分支名称可随机命名），并把分支名称告知学生
 1. 学生通过以下操作拉取考核代码：
-```bash
-mkdir ~/exam-test
-cd ~/exam-test
-git clone -b 分支名称 git@github.com:OSCPU/ysyx-exam.git
-cd ysyx-exam/ysyx-exam
-source exam-init.sh # 此操作将会在当前shell中临时更新NEMU_HOME, AM_HOME, NAVY_HOME三个环境变量
-```
+  ```bash
+  mkdir ~/exam-test
+  cd ~/exam-test
+  git clone -b 分支名称 git@github.com:OSCPU/ysyx-exam.git
+  cd ysyx-exam/ysyx-exam
+  source exam-init.sh # 此操作将会在当前shell中临时更新NEMU_HOME, AM_HOME, NAVY_HOME三个环境变量
+  ```
 1. 学生开始调试，助教开始计时
 1. 考核结束时，助教停止录屏，学生退出腾讯会议
 1. 答辩后，助教删除相应分支，并对学生进行评价，评价内容包括学生对项目细节的理解是否深入，对工具的掌握是否熟悉，调试方法是否清晰科学

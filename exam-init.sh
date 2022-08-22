@@ -7,6 +7,13 @@ if [[ ! -d navy-apps/$d ]]; then
 else
   echo navy-apps/$d already exists
 fi
+d="apps/bird/repo"
+if [[ ! -d navy-apps/$d ]]; then
+  cp -r $NAVY_HOME/$d `dirname navy-apps/$d`
+  mkdir -p navy-apps/fsimg/share/games
+else
+  echo navy-apps/$d already exists
+fi
 d="libs/libc"
 if [[ ! -d navy-apps/$d ]]; then
   cp -r $NAVY_HOME/$d `dirname navy-apps/$d`

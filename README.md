@@ -4,6 +4,10 @@
 
 ## 在线调试考核简介
 
+* 完成A线讲义nemu运行仙剑，npc运行仙剑
+* 填写[在线考核表](https://docs.qq.com/sheet/DSUdjb0tJRHJDdFNH)，git仓库必须公开以查看git log。
+* 考核通过接入vcs和dc
+
 助教将会在你提交的代码仓库中随机注入3个错误：
 * 软件、硬件和环境（包括构建脚本和仿真环境等）各1个
 * 但不会在仙剑、libc、spike等没有要求学生进行开发的代码中注入错误，也不会在Chisel代码中注入花哨的Scala语法糖
@@ -45,7 +49,7 @@ git commit -m "add exam file"
 
 ## 上传你的仓库
 
-请你将ysyx-workbench上传到一个公开的仓库。
+请你将ysyx-workbench上传到一个公开的仓库，仓库增加doc文件夹上传nemu和npc运行通过的截图。
 
 ## 考核环境自测
 

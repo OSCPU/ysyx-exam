@@ -5,7 +5,7 @@
 ## 在线调试考核简介
 
 * 完成A线讲义nemu运行仙剑，npc运行仙剑
-* 填写[在线考核表](https://docs.qq.com/sheet/DSUdjb0tJRHJDdFNH)，git仓库必须公开以查看git log。
+* 填写[在线考核表](https://docs.qq.com/sheet/DSUdjb0tJRHJDdFNH)，git仓库必须公开以查看git log
 * 考核通过接入vcs和dc
 
 助教将会在你提交的代码仓库中随机注入3个错误：

@@ -49,7 +49,7 @@ git commit -m "add exam file"
 
 ## 上传你的仓库
 
-请你将ysyx-workbench上传到一个公开的仓库，仓库增加doc文件夹上传nemu和npc运行通过的截图。
+请你将ysyx-workbench上传到一个公开的仓库，仓库增加doc文件夹上传nemu和npc运行通过的截图, 截图名：ysyx学号-nemu, ysyx学号-npc, nemu运行截图要求一半屏幕是libminiSDL部分代码，一半是运行过程，npc截图要求一半屏幕是difftest实现代码，另一半是运行截图。
 
 ## 考核环境自测
 

@@ -71,7 +71,7 @@ mkdir ~/exam-test
 cd ~/exam-test
 git clone 上一步上传仓库的URL ysyx-exam
 cd ysyx-exam/ysyx-exam
-source exam-init.sh # 此操作将会在当前shell中临时更新NEMU_HOME, AM_HOME, NAVY_HOME三个环境变量
+source exam-init.sh # 此操作将会在当前shell中临时更新NEMU_HOME, AM_HOME, NAVY_HOME, NPC_HOME四个环境变量
 cd nanos-lite
 make ARCH=riscv64-nemu update
 make ARCH=riscv64-nemu run
@@ -107,6 +107,12 @@ exit # 退出当前shell, 避免继续使用考核环境中的环境变量
 但不会在仙剑、libc、spike等学生没有进行直接开发的代码中注入错误，
 也不会在Chisel代码中注入花哨的Scala语法糖
 1. 助教通过`git init`重新创建工程，从而去掉`git diff`的记录
+1. 助教将注入错误的工程通过以下方式进行加密打包，并记录解压秘钥：
+   ```bash
+   base64 /dev/random | head -c 16  #此命令将会生成一个随机字符串作为秘钥
+   tar cj ysyx-workbench | openssl aes256 -k 秘钥 > exam.tar.bz2
+   ```
+1. 助教在考核前1天内将压缩包发送给学生，但不告知其秘钥
 
 ## 考核流程
 
@@ -117,15 +123,15 @@ exit # 退出当前shell, 避免继续使用考核环境中的环境变量
    * 确认学生身份，必要时可要求学生出示相关证件
    * 若上述两点未满足（如学生端无法打开摄像头），助教应取消该次考核
 1. 助教强调考核纪律，提醒考核时间等
-1. 助教将注入错误的工程push到ysyx-exam仓库（即本仓库）的新分支（分支名称可随机命名），并把分支名称告知学生
-1. 学生通过以下操作拉取考核代码：
-  ```bash
-  mkdir ~/exam-test
-  cd ~/exam-test
-  git clone -b 分支名称 git@github.com:OSCPU/ysyx-exam.git
-  cd ysyx-exam/ysyx-exam
-  source exam-init.sh # 此操作将会在当前shell中临时更新NEMU_HOME, AM_HOME, NAVY_HOME三个环境变量
-  ```
+1. 助教将解压秘钥告知学生，学生通过以下命对压缩包进行解压，并进行考核环境的初始化：
+   ```bash
+   mkdir ~/exam-test
+   mv 压缩包路径 ~/exam-test
+   cd ~/exam-test
+   cat exam.tar.bz2 | openssl aes256 -d -k 秘钥 | tar xvjf -
+   cd ysyx-exam/ysyx-workbench
+   source exam-init.sh # 此操作将会在当前shell中临时更新NEMU_HOME, AM_HOME, NAVY_HOME, NPC_HOME四个环境变量
+   ```
 1. 学生开始调试，助教录屏并开始计时
 1. **在考核过程中，学生严禁使用diff等工具通过对比注入错误前后的项目来观察代码的差异，一经发现将按作弊处理**
 1. 助教观察学生调试的过程，两名助教分别对学生进行评价，评价内容包括学生对项目细节的理解是否深入，对工具的掌握是否熟悉，调试方法是否清晰科学
@@ -133,7 +139,7 @@ exit # 退出当前shell, 避免继续使用考核环境中的环境变量
    若学生无意在环境变量指向原项目的情况下（如重新打开了终端但未运行`source exam-init.sh`）成功运行，
    助教应提醒学生，此次成功运行将不作为考核通过的依据
 1. 在考核过程中，若学生提前退出腾讯会议（误操作或由网络问题等原因导致），助教应终止该次考核，考核结果视为无效，并重新安排一次新的考核；若学生连续两次考核均出现提前退出腾讯会议的情况，将视为学生参加完一次考核且结果为不通过
-1. 考核结束时，学生退出腾讯会议，助教停止录屏，删除相应分支
+1. 考核结束时，学生退出腾讯会议，助教停止录屏
 1. 助教整理评价表，评价表中应包含日期、学生姓名、学校、年级、专业、学号、两名助教姓名和相应评价
 
 ## 考核后

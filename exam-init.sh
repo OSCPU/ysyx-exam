@@ -3,14 +3,18 @@ cd ..  # go up to the ysyx-workbench directory
 d="apps/pal/repo"
 if [[ ! -d navy-apps/$d ]]; then
   cp -r $NAVY_HOME/$d `dirname navy-apps/$d`
-  mkdir -p navy-apps/fsimg/share/games
+  mkdir -p navy-apps/fsimg/share/games/pal
+  cp -r $NAVY_HOME/$d/data/. ./navy-apps/fsimg/share/games/pal
 else
   echo navy-apps/$d already exists
 fi
+
 d="apps/bird/repo"
 if [[ ! -d navy-apps/$d ]]; then
   cp -r $NAVY_HOME/$d `dirname navy-apps/$d`
-  mkdir -p navy-apps/fsimg/share/games
+  mkdir -p navy-apps/fsimg/share/games/bird
+  cp -r $NAVY_HOME/$d/res/. ./navy-apps/fsimg/share/games/bird
+
 else
   echo navy-apps/$d already exists
 fi
@@ -33,6 +37,8 @@ if [[ ! -d nemu/$d ]]; then
   cp -r $NEMU_HOME/$d `dirname nemu/$d`
 else
   echo `dirname nemu/$d` already exists
+  rm -r ./am-kernels 
+  cp -r $NEMU_HOME/$d ./am-kernels
 fi
 
 source ysyx-exam/setup-env.sh

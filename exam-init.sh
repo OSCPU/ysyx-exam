@@ -45,3 +45,6 @@ make -C $NEMU_HOME -j distclean
 touch $NEMU_HOME/.config
 cp ysyx-exam/exam_defconfig $NEMU_HOME/configs/
 make -C $NEMU_HOME exam_defconfig
+
+cp -r $NAVY_HOME/apps/pal/repo/data $NAVY_HOME/fsimg/share/games/pal
+cp -r $NAVY_HOME/apps/bird/repo/res $NAVY_HOME/fsimg/share/games/bird

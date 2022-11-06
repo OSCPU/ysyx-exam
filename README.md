@@ -58,7 +58,8 @@ git commit -m "add exam file"
 
 ## 考核环境自测
 
-首先请检查如下路径是否存在，考核脚本将会直接从如下路径拷贝相关文件到考核环境中：
+首先请在linux环境下新建user命名为ysyx, 然后clone自己上传的repo并进行环境自测。
+请检查如下路径是否存在，考核脚本将会直接从如下路径拷贝相关文件到考核环境中：
 * `$NAVY_HOME/apps/pal/repo/`
 * `$NAVY_HOME/apps/bird/repo/`
 * `$NAVY_HOME/libs/libc/`
@@ -91,7 +92,7 @@ exit # 退出当前shell, 避免继续使用考核环境中的环境变量
 
 ## 填写考核申请表
 
-学生完成上述流程后，填写[考核申请表](https://docs.qq.com/sheet/DSUdjb0tJRHJDdFNH)，并等待助教安排考核时间
+学生完成上述流程后，填写[模拟考核申请表](https://docs.qq.com/sheet/DSWl5UFdXUXZSWmFn?tab=BB08J2) 或 [正式考核申请表](https://docs.qq.com/sheet/DSUdjb0tJRHJDdFNH)，模拟考核无时间限制，正式考核需要等待助教安排考核时间。
 
 ## 考核前准备
 

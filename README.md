@@ -60,9 +60,9 @@ git commit -m "add exam file"
 
 ## 上传你的仓库
 
-* 请你将ysyx-workbench上传到一个公开的仓库，仓库增加doc文件夹，上传nemu和npc运行PAL通过的截图, 截图名：ysyx学号-nemu, ysyx学号-npc。
+* 请你将ysyx-workbench上传到一个公开的仓库，仓库增加doc文件夹，上传nemu和npc运行PAL通过的截图以及time.txt, 截图名：ysyx学号-nemu, ysyx学号-npc, time.txt标明nemu和npc运行PAL出现logo SOFTSTAR所需时间，精确到分。
 * nemu运行截图要求一半屏幕是libminiSDL部分代码，一半是运行过程；npc截图要求一半屏幕是difftest部分代码，另一半是运行过程。
-* 关闭所有的trace和波形
+* **关闭所有的trace和波形**
 
 ## 考核环境自测
 

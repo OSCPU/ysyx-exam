@@ -104,7 +104,7 @@ exit # 退出当前shell, 避免继续使用考核环境中的环境变量
 为避免助教和学员因软件版本不一致出现bug, 现对考核使用软件版本做出如下约束：
 
 llvm version: 11/12  
-verilator version: 4.210
+verilator version: 5.008
 
 ## 填写考核申请表
 

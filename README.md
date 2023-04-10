@@ -108,7 +108,7 @@ verilator version: 5.008
 
 ## 填写考核申请表
 
-学生完成上述流程后，填写[模拟考核申请表](https://docs.qq.com/sheet/DSWl5UFdXUXZSWmFn?tab=BB08J2) 或 [正式考核申请表](https://docs.qq.com/sheet/DSUdjb0tJRHJDdFNH)，模拟考核无时间限制，正式考核需要等待助教安排考核时间。
+学生完成上述流程后，填写[正式考核申请表](https://docs.qq.com/sheet/DSUdjb0tJRHJDdFNH)，正式考核需要等待助教安排考核时间。
 
 ## 考核前准备
 
